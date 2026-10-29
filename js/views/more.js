@@ -123,6 +123,10 @@
         await app.reloadFromCloud();
       }
     } catch (err) {
+      /* 校验失败：清除无效 Token，避免刷新后应用卡在错误态 */
+      Store.clearToken();
+      app.state.mode = "readonly";
+      app.setSyncStatus("readonly", "未绑定 Token");
       const map = {
         TOKEN_EXPIRED: "Token 无效或已过期，请重新生成",
         TOKEN_INVALID: "Token 校验失败",
