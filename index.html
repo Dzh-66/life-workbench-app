@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'self' https://api.github.com; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; script-src 'self'; media-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self'">
+<meta name="theme-color" content="#0b0e1a">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="工作台">
+<title>任务笔记工作台</title>
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="icon" href="./icons/icon-192.png">
+<link rel="apple-touch-icon" href="./icons/icon-180.png">
+<link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+<div id="wx-banner" class="wx-banner" hidden>
+  <span>⚠️ 微信内置浏览器可能无法正常使用本应用</span>
+  <button type="button" class="btn" id="wx-copy">复制链接</button>
+  <span class="wx-tip">请点右上角「···」→ 在系统浏览器中打开</span>
+</div>
+<div class="layout">
+  <aside class="sidenav">
+    <div class="brand">任务笔记<span>工作台</span></div>
+    <nav class="side-nav" aria-label="主导航">
+      <button type="button" data-view="focus"><span class="nav-ico">🎯</span>今日焦点</button>
+      <button type="button" data-view="tree"><span class="nav-ico">🌳</span>领域树</button>
+      <button type="button" data-view="timeline"><span class="nav-ico">📈</span>成长轨迹</button>
+      <button type="button" data-view="journal"><span class="nav-ico">📔</span>日记</button>
+      <button type="button" data-view="more"><span class="nav-ico">⚙️</span>更多</button>
+    </nav>
+    <div class="side-foot">v1.0.0</div>
+  </aside>
+  <div class="content">
+    <header class="topbar">
+      <h1 id="view-title">今日焦点</h1>
+      <button type="button" id="sync-status" class="sync-status syncing">…</button>
+    </header>
+    <div id="sync-banner" class="sync-banner" hidden></div>
+    <main id="main"></main>
+  </div>
+</div>
+<nav class="bottom-nav" aria-label="底部导航">
+  <div class="nav-inner">
+    <button type="button" data-view="focus"><span class="nav-ico">🎯</span>焦点</button>
+    <button type="button" data-view="tree"><span class="nav-ico">🌳</span>树</button>
+    <button type="button" data-view="timeline"><span class="nav-ico">📈</span>轨迹</button>
+    <button type="button" data-view="journal"><span class="nav-ico">📔</span>日记</button>
+    <button type="button" data-view="more"><span class="nav-ico">⚙️</span>更多</button>
+  </div>
+</nav>
+<div class="statusbar"><div id="toast" class="toast" hidden></div></div>
+<input type="file" id="file-input" hidden>
+<input type="file" id="import-input" accept=".json,.html,application/json,text/html" hidden>
+<script src="./js/util.js"></script>
+<script src="./js/commit.js"></script>
+<script src="./js/seed.js"></script>
+<script src="./js/model.js"></script>
+<script src="./js/store.js"></script>
+<script src="./js/pwa.js"></script>
+<script src="./js/views/focus.js"></script>
+<script src="./js/views/tree.js"></script>
+<script src="./js/views/timeline.js"></script>
+<script src="./js/views/journal.js"></script>
+<script src="./js/views/more.js"></script>
+<script src="./js/app.js"></script>
+</body>
+</html>
