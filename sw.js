@@ -1,1 +1,75 @@
-Lyog5Lu75Yqh56yU6K6w5bel5L2c5Y+wIC0gU2VydmljZSBXb3JrZXLvvIjlpJblo7PnvJPlrZjvvJthcGkuZ2l0aHViLmNvbSDkuIDlvovkuI3nvJPlrZjvvIkgKi8KY29uc3QgQ0FDSEUgPSAibHdiLXNoZWxsLXYyIjsKY29uc3QgU0hFTEwgPSBbCiAgIi4vIiwKICAiLi9pbmRleC5odG1sIiwKICAiLi9jc3Mvc3R5bGUuY3NzP3Y9MiIsCiAgIi4vanMvdXRpbC5qcz92PTIiLAogICIuL2pzL2NvbW1pdC5qcz92PTIiLAogICIuL2pzL3NlZWQuanM/dj0yIiwKICAiLi9qcy9tb2RlbC5qcz92PTIiLAogICIuL2pzL3N0b3JlLmpzP3Y9MiIsCiAgIi4vanMvcHdhLmpzP3Y9MiIsCiAgIi4vanMvYXBwLmpzP3Y9MiIsCiAgIi4vanMvdmlld3MvZm9jdXMuanM/dj0yIiwKICAiLi9qcy92aWV3cy90cmVlLmpzP3Y9MiIsCiAgIi4vanMvdmlld3MvdGltZWxpbmUuanM/dj0yIiwKICAiLi9qcy92aWV3cy9qb3VybmFsLmpzP3Y9MiIsCiAgIi4vanMvdmlld3MvbW9yZS5qcz92PTIiLAogICIuL21hbmlmZXN0LndlYm1hbmlmZXN0P3Y9MiIsCiAgIi4vaWNvbnMvaWNvbi0xOTIucG5nIiwKICAiLi9pY29ucy9pY29uLTUxMi5wbmciCl07CgpzZWxmLmFkZEV2ZW50TGlzdGVuZXIoImluc3RhbGwiLCAoZSkgPT4gewogIGUud2FpdFVudGlsKAogICAgY2FjaGVzLm9wZW4oQ0FDSEUpLnRoZW4oKGMpID0+IGMuYWRkQWxsKFNIRUxMKSkuY2F0Y2goKCkgPT4ge30pCiAgICAgIC50aGVuKCgpID0+IHNlbGYuc2tpcFdhaXRpbmcoKSkKICApOwp9KTsKCnNlbGYuYWRkRXZlbnRMaXN0ZW5lcigiYWN0aXZhdGUiLCAoZSkgPT4gewogIGUud2FpdFVudGlsKAogICAgY2FjaGVzLmtleXMoKS50aGVuKChrZXlzKSA9PgogICAgICBQcm9taXNlLmFsbChrZXlzLmZpbHRlcigoaykgPT4gayAhPT0gQ0FDSEUpLm1hcCgoaykgPT4gY2FjaGVzLmRlbGV0ZShrKSkpCiAgICApLnRoZW4oKCkgPT4gc2VsZi5jbGllbnRzLmNsYWltKCkpCiAgKTsKfSk7CgpzZWxmLmFkZEV2ZW50TGlzdGVuZXIoImZldGNoIiwgKGUpID0+IHsKICBjb25zdCByZXEgPSBlLnJlcXVlc3Q7CiAgaWYgKHJlcS5tZXRob2QgIT09ICJHRVQiKSByZXR1cm47CiAgY29uc3QgdXJsID0gbmV3IFVSTChyZXEudXJsKTsKICAvKiDmlbDmja4gQVBJ77ya5LiN57yT5a2Y44CB55u05o6l5pS+6KGM77yI5pWw5o2u5LiA6Ie05oCn55SxIGxvY2FsU3RvcmFnZSDlv6vnhafotJ/otKPvvIkgKi8KICBpZiAodXJsLmhvc3RuYW1lID09PSAiYXBpLmdpdGh1Yi5jb20iKSByZXR1cm47CgogIGlmIChyZXEubW9kZSA9PT0gIm5hdmlnYXRlIikgewogICAgLyog5a+86Iiq77ya572R57uc5LyY5YWI77yM56a757q/5Zue6YCA57yT5a2Y5aSW5aOzICovCiAgICBlLnJlc3BvbmRXaXRoKAogICAgICBmZXRjaChyZXEpLnRoZW4oKHJlcykgPT4gewogICAgICAgIGNvbnN0IGNvcHkgPSByZXMuY2xvbmUoKTsKICAgICAgICBjYWNoZXMub3BlbihDQUNIRSkudGhlbigoYykgPT4gYy5wdXQoIi4vaW5kZXguaHRtbCIsIGNvcHkpKS5jYXRjaCgoKSA9PiB7fSk7CiAgICAgICAgcmV0dXJuIHJlczsKICAgICAgfSkuY2F0Y2goKCkgPT4KICAgICAgICBjYWNoZXMubWF0Y2goIi4vaW5kZXguaHRtbCIpLnRoZW4oKHIpID0+IHIgfHwgY2FjaGVzLm1hdGNoKCIuLyIpKQogICAgICApCiAgICApOwogICAgcmV0dXJuOwogIH0KCiAgLyog5ZCM5rqQ6Z2Z5oCB6LWE5rqQ77yac3RhbGUtd2hpbGUtcmV2YWxpZGF0ZSAqLwogIGlmICh1cmwub3JpZ2luID09PSBsb2NhdGlvbi5vcmlnaW4pIHsKICAgIGUucmVzcG9uZFdpdGgoCiAgICAgIGNhY2hlcy5tYXRjaChyZXEpLnRoZW4oKGNhY2hlZCkgPT4gewogICAgICAgIGNvbnN0IGZldGNoUCA9IGZldGNoKHJlcSkudGhlbigocmVzKSA9PiB7CiAgICAgICAgICBpZiAocmVzICYmIHJlcy5zdGF0dXMgPT09IDIwMCkgewogICAgICAgICAgICBjb25zdCBjb3B5ID0gcmVzLmNsb25lKCk7CiAgICAgICAgICAgIGNhY2hlcy5vcGVuKENBQ0hFKS50aGVuKChjKSA9PiBjLnB1dChyZXEsIGNvcHkpKS5jYXRjaCgoKSA9PiB7fSk7CiAgICAgICAgICB9CiAgICAgICAgICByZXR1cm4gcmVzOwogICAgICAgIH0pLmNhdGNoKCgpID0+IGNhY2hlZCk7CiAgICAgICAgcmV0dXJuIGNhY2hlZCB8fCBmZXRjaFA7CiAgICAgIH0pCiAgICApOwogIH0KfSk7Cg==
+/* 任务笔记工作台 - Service Worker（外壳缓存；api.github.com 一律不缓存） */
+const CACHE = "lwb-shell-v2";
+const SHELL = [
+  "./",
+  "./index.html",
+  "./css/style.css?v=2",
+  "./js/util.js?v=2",
+  "./js/commit.js?v=2",
+  "./js/seed.js?v=2",
+  "./js/model.js?v=2",
+  "./js/store.js?v=2",
+  "./js/pwa.js?v=2",
+  "./js/app.js?v=2",
+  "./js/views/focus.js?v=2",
+  "./js/views/tree.js?v=2",
+  "./js/views/timeline.js?v=2",
+  "./js/views/journal.js?v=2",
+  "./js/views/more.js?v=2",
+  "./manifest.webmanifest?v=2",
+  "./icons/icon-192.png",
+  "./icons/icon-512.png"
+];
+
+self.addEventListener("install", (e) => {
+  e.waitUntil(
+    caches.open(CACHE).then((c) => c.addAll(SHELL)).catch(() => {})
+      .then(() => self.skipWaiting())
+  );
+});
+
+self.addEventListener("activate", (e) => {
+  e.waitUntil(
+    caches.keys().then((keys) =>
+      Promise.all(keys.filter((k) => k !== CACHE).map((k) => caches.delete(k)))
+    ).then(() => self.clients.claim())
+  );
+});
+
+self.addEventListener("fetch", (e) => {
+  const req = e.request;
+  if (req.method !== "GET") return;
+  const url = new URL(req.url);
+  /* 数据 API：不缓存、直接放行（数据一致性由 localStorage 快照负责） */
+  if (url.hostname === "api.github.com") return;
+
+  if (req.mode === "navigate") {
+    /* 导航：网络优先，离线回退缓存外壳 */
+    e.respondWith(
+      fetch(req).then((res) => {
+        const copy = res.clone();
+        caches.open(CACHE).then((c) => c.put("./index.html", copy)).catch(() => {});
+        return res;
+      }).catch(() =>
+        caches.match("./index.html").then((r) => r || caches.match("./"))
+      )
+    );
+    return;
+  }
+
+  /* 同源静态资源：stale-while-revalidate */
+  if (url.origin === location.origin) {
+    e.respondWith(
+      caches.match(req).then((cached) => {
+        const fetchP = fetch(req).then((res) => {
+          if (res && res.status === 200) {
+            const copy = res.clone();
+            caches.open(CACHE).then((c) => c.put(req, copy)).catch(() => {});
+          }
+          return res;
+        }).catch(() => cached);
+        return cached || fetchP;
+      })
+    );
+  }
+});
