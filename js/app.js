@@ -121,7 +121,7 @@
       const r = mutator(draft);
       this.state.data = (r && typeof r === "object") ? Model.migrate(r) : draft;
       Model.pruneFocusDates(this.state.data, u.todayStr());
-      this.queue.push({ mutator: mutator, op: op });
+      this.state.queue.push({ mutator: mutator, op: op });
       this.render();
       this.scheduleFlush();
       return true;
@@ -134,9 +134,9 @@
 
     /* 单飞提交：合并队列 → PUT；409 自动重拉重放；失败回退队列 */
     async flush() {
-      if (this.state.saving || !this.queue.length) return;
-      this._pending = this.queue.slice();
-      this.queue = [];
+      if (this.state.saving || !this.state.queue.length) return;
+      this._pending = this.state.queue.slice();
+      this.state.queue = [];
       this.state.saving = true;
       this.setSyncStatus("saving", "⏳ 保存中…");
       const snapshot = structuredClone(this.state.data);
@@ -158,18 +158,18 @@
           await this._handleConflict(snapshot, baseMsg);
         } else if (err.code === "OFFLINE") {
           this.state.online = false;
-          this.queue = this._pending.concat(this.queue);
+          this.state.queue = this._pending.concat(this.state.queue);
           this._pending = null;
           this.setSyncStatus("unsynced", "⚠️ 未同步 · 点击重试");
           this.toast("error", "❌ 网络不可用，修改已保留在本页，恢复网络后点击状态栏重试");
         } else if (err.code === "TOKEN_EXPIRED") {
           this.state.mode = "readonly";
-          this.queue = this._pending.concat(this.queue);
+          this.state.queue = this._pending.concat(this.state.queue);
           this._pending = null;
           this.setSyncStatus("error", "Token 失效");
           this.toast("error", "⚠️ Token 失效，修改暂存于本页；请到「更多 → 设置」更新 Token 后点击状态栏重试");
         } else {
-          this.queue = this._pending.concat(this.queue);
+          this.state.queue = this._pending.concat(this.state.queue);
           this._pending = null;
           this.setSyncStatus("unsynced", "⚠️ 保存失败 · 点击重试");
           this.toast("error", "❌ 保存失败：" + (err.message || "未知错误"));
@@ -183,8 +183,8 @@
     /* 409：自动重拉云端，把本批次全部修改重放到最新数据上再提交；二次冲突弹窗选择 */
     async _handleConflict(snapshot, baseMsg) {
       /* 冲突处理期间的新修改也一并纳入重放（同批提交） */
-      this._pending = this._pending.concat(this.queue);
-      this.queue = [];
+      this._pending = this._pending.concat(this.state.queue);
+      this.state.queue = [];
       try {
         const r = await Store.fetchData();
         let rebased = Model.migrate(r.data);
@@ -195,7 +195,7 @@
         const newSha = await Store.saveData(rebased, r.sha, baseMsg + "（冲突自动合并）");
         /* 重放期间产生的新修改：重新应用到合并结果上（其 op 留在 queue，下次提交） */
         let finalData = rebased;
-        for (const item of this.queue) {
+        for (const item of this.state.queue) {
           const ret = item.mutator(finalData);
           if (ret && typeof ret === "object") finalData = Model.migrate(ret);
         }
@@ -221,7 +221,7 @@
             this.setSyncStatus("synced", "● 已同步（本地覆盖）");
             this.toast("saved", "✅ 已保存（本地覆盖云端）");
           } catch (e3) {
-            this.queue = this._pending.concat(this.queue);
+            this.state.queue = this._pending.concat(this.state.queue);
             this._pending = null;
             this.setSyncStatus("unsynced", "⚠️ 保存失败 · 点击重试");
             this.toast("error", "❌ 保存失败：" + (e3.message || "未知错误"));
@@ -240,7 +240,7 @@
           this.state.sha = r.sha;
           this.state.mode = "ready";
           this.writeCache(r.data, r.sha);
-          this.queue = [];
+          this.state.queue = [];
           this._pending = null;
           this.setSyncStatus("synced", "● 已同步");
         } else {
@@ -260,7 +260,7 @@
       if (!Store.getToken()) { this.toast("error", "请先在「更多 → 设置」绑定 Token"); return; }
       this.setSyncStatus("syncing", "⏳ 同步中…");
       try {
-        if (this.queue.length) await this.flush();
+        if (this.state.queue.length) await this.flush();
         await this.reloadFromCloud();
         this.toast("saved", "✅ 已同步");
       } catch (err) {
@@ -472,7 +472,7 @@
       window.addEventListener("hashchange", () => { this.route(); this.render(); });
       window.addEventListener("online", () => {
         this.state.online = true;
-        if (this.queue.length) this.flush();
+        if (this.state.queue.length) this.flush();
         else if (this.state.mode === "offline") { this.state.mode = "ready"; this.reloadFromCloud(); }
       });
       window.addEventListener("offline", () => {

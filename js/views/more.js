@@ -117,7 +117,7 @@
       setTokenMsg("ok", "✓ 有效（账号 " + r.login + "）");
       app.state.mode = "ready";
       app.setSyncStatus("syncing", "⏳ 同步中…");
-      if (app.queue.length) {
+      if (app.state.queue.length) {
         await app.flush();
       } else {
         await app.reloadFromCloud();
